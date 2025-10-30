@@ -1,62 +1,59 @@
-# Prakriti Wellness Management
+# Prakriti Wellness Analyzer
 
-**Prakriti Wellness Management** is a comprehensive web application designed to integrate health and wellness practices with modern technology. It focuses on user-centric features for personalized health management, including profile creation, assessments, and ongoing support.
+A wellness-focused web application based on Ayurvedic principles that helps users discover their **Prakriti** (Vata, Pitta, Kapha) and follow a healthier lifestyle.
 
-## Features
+---
 
-- **User Profile**  
-  Users enter personal details and health information to build a customized profile.
+## Key Features
 
-- **Prakriti Analysis**  
-  A questionnaire-based tool to assess the user's Prakriti (dominant dosha: Vata, Pitta, or Kapha) according to Ayurvedic principles.
+- **Prakriti Test** — Determine your dominant dosha through a guided questionnaire  
+- **Personalized Diet Plan** — Food suggestions tailored to your body type  
+- **Daily Routine Guide** — Better lifestyle habits (exercise, meals, meditation)  
+- **Progress & Follow-ups** — Track wellness improvements over time  
+- **Admin Dashboard** — Manage users and monitor follow-up activities  
 
-- **Diet Chart**  
-  Generates personalized diet recommendations tailored to the user's Prakriti for balanced nutrition.
+---
 
-- **Daily Schedule**  
-  Provides routine suggestions, including optimal wake-up times, exercise, meditation, meal timings, and sleep schedules (Dinacharya).
+## Live Demo
 
-- **Follow-ups**  
-  Includes reminders for adherence, progress tracking, and mechanisms for feedback collection to ensure sustained engagement.
+https://prakriti-nu.vercel.app
 
-- **Admin Panel**  
-  A dedicated interface for administrators to manage user (student) data, oversee follow-ups, and monitor overall system performance.
+---
 
-## 🌐 Deployed Link of Project
+## Test Login Details
 
-**Live Demo**: [https://prakriti-nu.vercel.app](https://prakriti-nu.vercel.app)
-> Note: If deployed link not working please follow below given installation process
+| Role | Email | Password |
+|------|-------|----------|
+| User | shrey@example.com | password123 |
+| Admin | admin@admin.com | admin@123 |
 
-## 🔐 Test Credentials
-- Email: shrey@example.com      Password: password123  
-- Email: admin@admin.com    Password: admin@123 
-> Note: Enter user and admin credentials in same signin page as there is no different page for them to login
+> Both login roles share the same sign-in page
 
-## 🧪 Testing Instructions
-- Test User profile, Prakriti test, Diet chart, Daily schedule, Progress on **USER SIDE**
-- Add follow-ups to specific user from **ADMIN SIDE** in admin panel section by selecting user > Add Follow-up > Create Follow-up  (which user can see in their Follow-ups section)
-> Note: Open 2 instances of chrome browser and login with user and admin in each for simultaneous testing
+---
 
-## ✅ Prerequisites (if running locally)
+## Run Locally
 
-Before running the project, ensure you have the following installed:
+Make sure MongoDB is running on your system 
 
-- **Node.js** (v16 or higher) – [Download](https://nodejs.org/)
-- **npm** (v7+) Package manager
-- **Git** – Version control – [Download](https://git-scm.com/)
+```bash
+git clone https://github.com/CoderVed04/ihwp_project.git
+cd ihwp_project
+npm install
+npm run dev
+```
 
-## 🚀 Installation and Run project locally
+App will be available at `http://localhost:3000`
 
-1. **Clone the repository**
-  ```bash
-  git clone https://github.com/CoderVed04/ihwp_project.git
-  cd ihwp_project
-  ```
-2.**Install dependencies**
-  ```bash
-  npm install
-  ```
-3.**Run the project**
-  ```bash
-  npm run dev
-  ```
+---
+
+## Built With
+
+- Next.js  
+- MongoDB  
+- Tailwind CSS (optional depending on your setup)
+
+---
+
+## License
+
+Open-source project — feel free to explore and improve it!
