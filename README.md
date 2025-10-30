@@ -28,8 +28,8 @@
 > Note: If deployed link not working please follow below given installation process
 
 ## 🔐 Test Credentials
-- Email: user@user.com      Password: user@123  **(USER CREDENTIALS)**
-- Email: admin@admin.com    Password: admin@123 **(ADMIN CREDENTIALS)**
+- Email: shrey@example.com      Password: password123  
+- Email: admin@admin.com    Password: admin@123 
 > Note: Enter user and admin credentials in same signin page as there is no different page for them to login
 
 ## 🧪 Testing Instructions
