@@ -33,7 +33,6 @@ https://prakriti-nu.vercel.app
 
 ## Run Locally
 
-Make sure MongoDB is running on your system 
 
 ```bash
 git clone https://github.com/Shreyash0712/IHWP
