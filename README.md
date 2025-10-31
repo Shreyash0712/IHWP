@@ -37,22 +37,10 @@ Make sure MongoDB is running on your system
 
 ```bash
 git clone https://github.com/Shreyash0712/IHWP
-cd ihwp_project
+cd IHWP
 npm install
 npm run dev
 ```
-
-App will be available at `http://localhost:3000`
-
----
-
-## Built With
-
-- Next.js  
-- MongoDB  
-- Tailwind CSS (optional depending on your setup)
-
----
 
 ## License
 
