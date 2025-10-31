@@ -36,7 +36,7 @@ https://prakriti-nu.vercel.app
 Make sure MongoDB is running on your system 
 
 ```bash
-git clone https://github.com/CoderVed04/ihwp_project.git
+git clone https://github.com/Shreyash0712/IHWP
 cd ihwp_project
 npm install
 npm run dev
