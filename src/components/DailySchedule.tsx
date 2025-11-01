@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase, DailyScheduleTemplate, PrakritiAssessment } from '../lib/supabase';
-import { Calendar, Clock, Sunrise, Sun, Sunset, Moon } from 'lucide-react';
+import { Calendar, Clock, Sunrise, Sun, Sunset, Moon, Lightbulb } from 'lucide-react';
 
 export const DailySchedule: React.FC = () => {
   const { user } = useAuth();
@@ -81,22 +81,22 @@ export const DailySchedule: React.FC = () => {
   const getTimeColor = (timeOfDay: string) => {
     switch (timeOfDay) {
       case 'morning':
-        return { bg: 'bg-yellow-50', text: 'text-yellow-800', border: 'border-yellow-200' };
+        return { bg: 'bg-warm-50', text: 'text-warm-800', border: 'border-warm-200' };
       case 'afternoon':
-        return { bg: 'bg-orange-50', text: 'text-orange-800', border: 'border-orange-200' };
+        return { bg: 'bg-warm-50', text: 'text-warm-800', border: 'border-warm-200' };
       case 'evening':
-        return { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200' };
+        return { bg: 'bg-primary-50', text: 'text-primary-800', border: 'border-primary-200' };
       case 'night':
-        return { bg: 'bg-indigo-50', text: 'text-indigo-800', border: 'border-indigo-200' };
+        return { bg: 'bg-secondary-50', text: 'text-secondary-800', border: 'border-secondary-200' };
       default:
         return { bg: 'bg-gray-50', text: 'text-gray-800', border: 'border-gray-200' };
     }
   };
 
   const doshaColors: Record<string, { bg: string; text: string; border: string }> = {
-    Vata: { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200' },
-    Pitta: { bg: 'bg-orange-50', text: 'text-orange-800', border: 'border-orange-200' },
-    Kapha: { bg: 'bg-green-50', text: 'text-green-800', border: 'border-green-200' },
+    Vata: { bg: 'bg-primary-50', text: 'text-primary-800', border: 'border-primary-200' },
+    Pitta: { bg: 'bg-warm-50', text: 'text-warm-800', border: 'border-warm-200' },
+    Kapha: { bg: 'bg-accent-50', text: 'text-accent-800', border: 'border-accent-200' },
   };
 
   const primaryDosha = assessment.dominant_dosha.split('-')[0] as 'Vata' | 'Pitta' | 'Kapha';
@@ -173,14 +173,34 @@ export const DailySchedule: React.FC = () => {
         })}
       </div>
 
-      <div className="mt-6 bg-teal-50 border border-teal-200 rounded-xl p-6">
-        <h3 className="font-semibold text-teal-900 mb-3">Tips for Success</h3>
-        <ul className="space-y-2 text-teal-800 text-sm">
-          <li>• Consistency is key - try to maintain regular timing each day</li>
-          <li>• Start with one or two activities and gradually build your routine</li>
-          <li>• Adjust based on seasons and your personal schedule</li>
-          <li>• Listen to your body and modify as needed</li>
-          <li>• Set reminders to help establish new habits</li>
+      <div className="mt-6 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-xl p-6 shadow-sm">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="bg-accent-100 p-2 rounded-lg">
+            <Lightbulb className="w-5 h-5 text-accent-600" />
+          </div>
+          <h3 className="font-semibold text-accent-900">Tips for Success</h3>
+        </div>
+        <ul className="space-y-3 text-accent-800 text-sm pl-10">
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2"></div>
+            <span>Consistency is key - try to maintain regular timing each day</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2"></div>
+            <span>Start with one or two activities and gradually build your routine</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2"></div>
+            <span>Adjust based on seasons and your personal schedule</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2"></div>
+            <span>Listen to your body and modify as needed</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2"></div>
+            <span>Set reminders to help establish new habits</span>
+          </li>
         </ul>
       </div>
     </div>

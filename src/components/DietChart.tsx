@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase, DietRecommendation, PrakritiAssessment } from '../lib/supabase';
-import { Utensils, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Utensils, Clock, CheckCircle, XCircle, Info } from 'lucide-react';
 
 export const DietChart: React.FC = () => {
   const { user } = useAuth();
@@ -64,9 +64,9 @@ export const DietChart: React.FC = () => {
   }
 
   const doshaColors: Record<string, { bg: string; text: string; border: string }> = {
-    Vata: { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200' },
-    Pitta: { bg: 'bg-orange-50', text: 'text-orange-800', border: 'border-orange-200' },
-    Kapha: { bg: 'bg-green-50', text: 'text-green-800', border: 'border-green-200' },
+    Vata: { bg: 'bg-primary-50', text: 'text-primary-800', border: 'border-primary-200' },
+    Pitta: { bg: 'bg-warm-50', text: 'text-warm-800', border: 'border-warm-200' },
+    Kapha: { bg: 'bg-accent-50', text: 'text-accent-800', border: 'border-accent-200' },
   };
 
   const primaryDosha = assessment.dominant_dosha.split('-')[0] as 'Vata' | 'Pitta' | 'Kapha';
@@ -165,14 +165,34 @@ export const DietChart: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
-        <h3 className="font-semibold text-blue-900 mb-2">General Guidelines</h3>
-        <ul className="space-y-2 text-blue-800 text-sm">
-          <li>• Eat mindfully and in a calm environment</li>
-          <li>• Drink warm water throughout the day</li>
-          <li>• Make lunch your largest meal of the day</li>
-          <li>• Avoid eating late at night</li>
-          <li>• Listen to your body and adjust portions as needed</li>
+      <div className="mt-6 bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl p-6 shadow-sm">
+        <div className="flex items-start gap-3 mb-3">
+          <div className="bg-primary-100 p-2 rounded-lg">
+            <Info className="w-5 h-5 text-primary-600" />
+          </div>
+          <h3 className="font-semibold text-primary-900">General Guidelines</h3>
+        </div>
+        <ul className="space-y-3 text-primary-800 text-sm pl-10">
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2"></div>
+            <span>Eat mindfully and in a calm environment</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2"></div>
+            <span>Drink warm water throughout the day</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2"></div>
+            <span>Make lunch your largest meal of the day</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2"></div>
+            <span>Avoid eating late at night</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2"></div>
+            <span>Listen to your body and adjust portions as needed</span>
+          </li>
         </ul>
       </div>
     </div>

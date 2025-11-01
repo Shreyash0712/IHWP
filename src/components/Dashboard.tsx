@@ -107,16 +107,16 @@ export const Dashboard: React.FC = () => {
 
   const Overview = () => (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 rounded-xl p-8 mb-8">
+      <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl p-8 mb-8">
         <div className="flex items-center gap-4 mb-4">
           <div className="bg-white p-3 rounded-full">
-            <Heart className="w-8 h-8 text-green-600" />
+            <Heart className="w-8 h-8 text-primary-600" />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-900">
               Welcome, {profile?.full_name}!
             </h2>
-            <p className="text-green-700 text-lg">
+            <p className="text-primary-700 text-lg">
               Your personalized Ayurvedic wellness journey
             </p>
           </div>
@@ -129,8 +129,8 @@ export const Dashboard: React.FC = () => {
           className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-left"
         >
           <div className="flex items-center gap-4 mb-3">
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <User className="w-6 h-6 text-blue-600" />
+            <div className="bg-primary-100 p-3 rounded-lg">
+              <User className="w-6 h-6 text-primary-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900">Health Profile</h3>
           </div>
@@ -144,8 +144,8 @@ export const Dashboard: React.FC = () => {
           className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-left"
         >
           <div className="flex items-center gap-4 mb-3">
-            <div className="bg-orange-100 p-3 rounded-lg">
-              <ClipboardList className="w-6 h-6 text-orange-600" />
+            <div className="bg-warm-100 p-3 rounded-lg">
+              <ClipboardList className="w-6 h-6 text-warm-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900">
               {hasAssessment ? 'Retake Assessment' : 'Take Assessment'}
@@ -163,8 +163,8 @@ export const Dashboard: React.FC = () => {
           className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-left"
         >
           <div className="flex items-center gap-4 mb-3">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <Utensils className="w-6 h-6 text-green-600" />
+            <div className="bg-accent-100 p-3 rounded-lg">
+              <Utensils className="w-6 h-6 text-accent-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900">Diet Chart</h3>
           </div>
@@ -178,8 +178,8 @@ export const Dashboard: React.FC = () => {
           className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow text-left"
         >
           <div className="flex items-center gap-4 mb-3">
-            <div className="bg-teal-100 p-3 rounded-lg">
-              <Calendar className="w-6 h-6 text-teal-600" />
+            <div className="bg-secondary-100 p-3 rounded-lg">
+              <Calendar className="w-6 h-6 text-secondary-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900">Daily Schedule</h3>
           </div>
@@ -225,14 +225,14 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {!hasAssessment && (
-        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
-          <h3 className="font-semibold text-yellow-900 mb-2">Get Started!</h3>
-          <p className="text-yellow-800 mb-4">
+        <div className="bg-warm-50 border border-warm-200 rounded-xl p-6">
+          <h3 className="font-semibold text-warm-900 mb-2">Get Started!</h3>
+          <p className="text-warm-800 mb-4">
             Take your Prakriti assessment to unlock personalized diet and schedule recommendations.
           </p>
           <button
             onClick={() => setCurrentView('assessment')}
-            className="bg-yellow-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-700 transition-colors"
+            className="bg-warm-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-warm-700 transition-colors"
           >
             Take Assessment Now
           </button>
@@ -242,23 +242,28 @@ export const Dashboard: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-emerald-50">
-      <nav className="bg-white shadow-md sticky top-0 z-10">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+      <nav className="bg-white shadow-lg sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <button
               onClick={() => setCurrentView('overview')}
               className="flex items-center gap-2"
             >
-              <Heart className="w-8 h-8 text-green-600" />
-              <span className="text-xl font-bold text-gray-900">Ayurveda Health</span>
+              <div className="bg-gradient-to-r from-primary-600 to-secondary-600 p-2 rounded-lg">
+                <Heart className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-xl font-bold text-gray-900">Prakriti Wellness Analyzer</span>
             </button>
 
             <div className="flex items-center gap-4">
-              <span className="text-gray-700 hidden sm:block">{profile?.email}</span>
+              <div className="hidden md:flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2">
+                <User className="w-4 h-4 text-gray-600" />
+                <span className="text-gray-700">{profile?.email}</span>
+              </div>
               <button
                 onClick={signOut}
-                className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg hover:from-red-600 hover:to-red-700 transition-all shadow-md"
               >
                 <LogOut className="w-4 h-4" />
                 <span className="hidden sm:inline">Sign Out</span>
@@ -267,35 +272,35 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200">
+        <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex overflow-x-auto gap-1 py-2 scrollbar-hide">
+            <div className="flex overflow-x-auto gap-1 py-3 scrollbar-hide">
               <button
                 onClick={() => setCurrentView('overview')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-colors ${
+                className={`flex flex-col items-center justify-center px-4 py-2 rounded-xl font-medium whitespace-nowrap transition-all min-w-[80px] ${
                   currentView === 'overview'
-                    ? 'bg-green-100 text-green-700'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-white text-primary-700 shadow-md border border-primary-200'
+                    : 'text-gray-700 hover:bg-white/50'
                 }`}
               >
-                <Heart className="w-4 h-4" />
-                <span>Overview</span>
+                <Heart className={`w-5 h-5 mb-1 ${currentView === 'overview' ? 'text-primary-600' : 'text-gray-500'}`} />
+                <span className="text-xs">Overview</span>
               </button>
 
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => setCurrentView(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-colors relative ${
+                  className={`flex flex-col items-center justify-center px-4 py-2 rounded-xl font-medium whitespace-nowrap transition-all relative min-w-[80px] ${
                     currentView === item.id
-                      ? 'bg-green-100 text-green-700'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-white text-primary-700 shadow-md border border-primary-200'
+                      : 'text-gray-700 hover:bg-white/50'
                   }`}
                 >
-                  <item.icon className="w-4 h-4" />
-                  <span>{item.label}</span>
+                  <item.icon className={`w-5 h-5 mb-1 ${currentView === item.id ? 'text-primary-600' : 'text-gray-500'}`} />
+                  <span className="text-xs">{item.label}</span>
                   {item.badge && item.badge > 0 && (
-                    <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                    <span className="absolute top-1 right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
                       {item.badge}
                     </span>
                   )}
