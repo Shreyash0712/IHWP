@@ -16,7 +16,7 @@ A wellness-focused web application based on Ayurvedic principles that helps user
 
 ## Live Demo
 
-https://bit.ly/4oNHUAb
+https://prakriti-wellness-analyzer.vercel.app/
 
 ---
 
