@@ -25,7 +25,7 @@ https://prakriti-wellness-analyzer.vercel.app/
 | Role | Email | Password |
 |------|-------|----------|
 | User | shrey@example.com | password123 |
-| Admin | admin@admin.com | admin@123 |
+| Admin | shrey@admin.com | password123 |
 
 > Both login roles share the same sign-in page
 
